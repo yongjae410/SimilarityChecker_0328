@@ -15,6 +15,8 @@ public:
 TEST_F(SimilarityTestFixture, SameLengthTest)
 {
 	EXPECT_EQ(checker.checkLength("abc", "def"), 60);
+	EXPECT_EQ(checker.checkLength("ab", "ab"), 60);
+	EXPECT_EQ(checker.checkLength("1234567890", "1234567890"), 60);
 }
 
 TEST_F(SimilarityTestFixture, DifferentLengthTest)
