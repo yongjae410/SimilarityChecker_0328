@@ -30,11 +30,15 @@ TEST_F(SimilarityTestFixture, DifferentLengthTest)
 TEST_F(SimilarityTestFixture, SameAlphabetTest)
 {
 	EXPECT_EQ(checker.checkAlphabet("abc", "abc"), 40);
+	EXPECT_EQ(checker.checkAlphabet("aab", "aaaabb"), 40);
 }
 
 TEST_F(SimilarityTestFixture, DifferentAlphabetTest)
 {
 	EXPECT_EQ(checker.checkAlphabet("abc", "bcd"), 20);
+	EXPECT_EQ(checker.checkAlphabet("aaaaa", "aab"), 20);
+	EXPECT_EQ(checker.checkAlphabet("abcde", "123"), 0);
+	EXPECT_EQ(checker.checkAlphabet("abcde", "ab"), 16);
 }
 
 
