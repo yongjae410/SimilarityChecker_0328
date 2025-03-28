@@ -7,11 +7,11 @@ using std::string;
 class SimilarityChecker
 {
 public:
-	int checkLength(string s1, string s2)
+	int checkLength(string str1, string str2)
 	{
-		if (s1.size() != s2.size())
-			return 40;
-		return 60;
+		if (str1.size() == str2.size())
+			return 60;
+		return 40;
 	}
 
 private:
