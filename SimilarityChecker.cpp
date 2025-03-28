@@ -9,16 +9,26 @@ class SimilarityChecker
 public:
 	int checkLength(string str1, string str2)
 	{
-		if (str1.size() == str2.size())
+		int length1 = str1.length();
+		int length2 = str2.length();
+		int result = 0;
+
+		if (length1 == length2)
 			return 60;
 
-		if (str1.size() == 2 && str2.size() == 3)
-			return 30;
-
-		if (str2.size() >= (str1.size() * 2))
+		if ( (length1 >= (length2 * 2)) || (length2 >= (length1 * 2)) )
 			return 0;
 
-		return 40;
+		if (length1 > length2)
+		{
+			result = 60 - ((length1 - length2) * 60 / length2);
+		}
+		else
+		{
+			result = 60 - ((length2 - length1) * 60 / length1);
+		}
+
+		return result;
 	}
 
 private:
