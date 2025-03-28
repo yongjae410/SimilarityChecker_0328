@@ -12,6 +12,11 @@ using std::set;
 class SimilarityChecker
 {
 public:
+	int checkSimilarity(string str1, string str2)
+	{
+		return checkLength(str1, str2) + checkAlphabet(str1, str2);
+	}
+
 	int checkLength(string str1, string str2)
 	{
 		int length1 = str1.length();
