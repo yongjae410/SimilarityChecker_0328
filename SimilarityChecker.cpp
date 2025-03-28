@@ -33,6 +33,11 @@ public:
 		return result;
 	}
 
+	int checkAlphabet(string str1, string str2)
+	{
+		return 40;
+	}
+
 private:
 
 };

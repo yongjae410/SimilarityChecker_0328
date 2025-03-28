@@ -27,6 +27,12 @@ TEST_F(SimilarityTestFixture, DifferentLengthTest)
 	EXPECT_EQ(checker.checkLength("abcdef", "abcde"), 48);
 }
 
+TEST_F(SimilarityTestFixture, SameAlphabetTest)
+{
+	EXPECT_EQ(checker.checkAlphabet("abc", "abc"), 40);
+}
+
+
 int main()
 {
 	::InitGoogleMock();
