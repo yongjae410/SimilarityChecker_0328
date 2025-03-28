@@ -12,6 +12,11 @@ TEST(Group, tc1)
 	EXPECT_EQ(checker.checkLength("abc", "def"), 60);
 }
 
+TEST(Group, tc2)
+{
+	SimilarityChecker checker;
+	EXPECT_EQ(checker.checkLength("abc", "defg"), 40);
+}
 
 int main()
 {
