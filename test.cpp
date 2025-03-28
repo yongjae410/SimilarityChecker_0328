@@ -20,6 +20,8 @@ TEST_F(SimilarityTestFixture, SameLengthTest)
 TEST_F(SimilarityTestFixture, DifferentLengthTest)
 {
 	EXPECT_EQ(checker.checkLength("abc", "defg"), 40);
+	EXPECT_EQ(checker.checkLength("ab", "cde"), 30);
+	EXPECT_EQ(checker.checkLength("ab", "cdef"), 0);
 }
 
 int main()
