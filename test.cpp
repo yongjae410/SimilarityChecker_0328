@@ -5,16 +5,20 @@
 using namespace testing;
 using std::string;
 
-
-TEST(Group, tc1)
+class SimilarityTestFixture : public Test
 {
+public:
 	SimilarityChecker checker;
+};
+
+
+TEST_F(SimilarityTestFixture, SameLengthTest)
+{
 	EXPECT_EQ(checker.checkLength("abc", "def"), 60);
 }
 
-TEST(Group, tc2)
+TEST_F(SimilarityTestFixture, DifferentLengthTest)
 {
-	SimilarityChecker checker;
 	EXPECT_EQ(checker.checkLength("abc", "defg"), 40);
 }
 
