@@ -32,6 +32,11 @@ TEST_F(SimilarityTestFixture, SameAlphabetTest)
 	EXPECT_EQ(checker.checkAlphabet("abc", "abc"), 40);
 }
 
+TEST_F(SimilarityTestFixture, DifferentAlphabetTest)
+{
+	EXPECT_EQ(checker.checkAlphabet("abc", "bcd"), 20);
+}
+
 
 int main()
 {

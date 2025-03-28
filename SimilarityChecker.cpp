@@ -35,6 +35,8 @@ public:
 
 	int checkAlphabet(string str1, string str2)
 	{
+		if (str1.compare(str2) != 0)
+			return 20;
 		return 40;
 	}
 
