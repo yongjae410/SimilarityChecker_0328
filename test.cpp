@@ -1,6 +1,16 @@
 #include "gmock/gmock.h"
+#include "SimilarityChecker.cpp"
+#include <string>
 
 using namespace testing;
+using std::string;
+
+
+TEST(Group, tc1)
+{
+	SimilarityChecker checker;
+	EXPECT_EQ(checker.checkLength("abc", "def"), 60);
+}
 
 
 int main()
