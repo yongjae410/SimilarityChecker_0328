@@ -2,6 +2,8 @@
 
 #include <string>
 
+#define LENGTH_CHECK_MAX_SCORE 60
+
 using std::string;
 
 class SimilarityChecker
@@ -14,18 +16,18 @@ public:
 		int result = 0;
 
 		if (length1 == length2)
-			return 60;
+			return LENGTH_CHECK_MAX_SCORE;
 
 		if ( (length1 >= (length2 * 2)) || (length2 >= (length1 * 2)) )
 			return 0;
 
 		if (length1 > length2)
 		{
-			result = 60 - ((length1 - length2) * 60 / length2);
+			result = LENGTH_CHECK_MAX_SCORE - ((length1 - length2) * LENGTH_CHECK_MAX_SCORE / length2);
 		}
 		else
 		{
-			result = 60 - ((length2 - length1) * 60 / length1);
+			result = LENGTH_CHECK_MAX_SCORE - ((length2 - length1) * LENGTH_CHECK_MAX_SCORE / length1);
 		}
 
 		return result;
